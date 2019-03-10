@@ -10,15 +10,5 @@ import Foundation
 
 var appSetting = AppSetting()
 struct AppSetting {
-    var token: String? {
-        get { return UserDefaults.get(key: "token") as String? }
-        set {
-            didLogin = newValue != nil
-            UserDefaults.set(key: "token", value: newValue)
-        }
-    }
-    var didLogin: Bool {
-        get { return UserDefaults.get(key: "didLogin") as Bool? ?? false }
-        set { UserDefaults.set(key: "didLogin", value: newValue) }
-    }
+    
 }
