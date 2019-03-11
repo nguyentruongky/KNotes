@@ -129,13 +129,13 @@ class UIMaker {
         return button
     }
 
-    static func makeKeyboardDoneView(title: String = "Done", doneAction: Selector? = nil, font: UIFont = UIFont.systemFont(ofSize: 15)) -> UIView {
+    static func makeKeyboardDoneView(title: String = "Done", target: NSObject? = nil, doneAction: Selector? = nil, font: UIFont = UIFont.systemFont(ofSize: 15)) -> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 35))
         let button = makeButton(title: title,
                                 titleColor: UIColor(value: 3),
                                 font: font)
         if let doneAction = doneAction {
-            button.addTarget(self, action: doneAction, for: .touchUpInside)
+            button.addTarget(target, action: doneAction, for: .touchUpInside)
         }
         else {
             button.addTarget(appDelegate, action: #selector(hideKeyboard), for: .touchUpInside)

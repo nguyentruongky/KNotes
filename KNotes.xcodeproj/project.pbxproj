@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0B9D2F3FDD6B6AE724C69116 /* Pods_KNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F1055C9E1B66B416D0963A /* Pods_KNotes.framework */; };
+		2607AC502235C3C300EE5DAD /* NotesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607AC4F2235C3C300EE5DAD /* NotesList.swift */; };
+		2607AC532235C4B100EE5DAD /* DbConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607AC522235C4B100EE5DAD /* DbConnector.swift */; };
+		2607AC552235C55400EE5DAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2607AC542235C55400EE5DAD /* GoogleService-Info.plist */; };
+		2607AC572235FFCD00EE5DAD /* NoteComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607AC562235FFCD00EE5DAD /* NoteComposer.swift */; };
+		2607AC592236019F00EE5DAD /* ComposerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607AC582236019F00EE5DAD /* ComposerTextView.swift */; };
+		2607AC5B2236353800EE5DAD /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607AC5A2236353800EE5DAD /* NoteModel.swift */; };
 		2619AF1D2235BEEB0052B89B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619AF1C2235BEEB0052B89B /* AppDelegate.swift */; };
 		2619AF242235BEED0052B89B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2619AF232235BEED0052B89B /* Assets.xcassets */; };
 		2619AF272235BEED0052B89B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2619AF252235BEED0052B89B /* LaunchScreen.storyboard */; };
@@ -40,6 +46,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2607AC4F2235C3C300EE5DAD /* NotesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesList.swift; sourceTree = "<group>"; };
+		2607AC522235C4B100EE5DAD /* DbConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbConnector.swift; sourceTree = "<group>"; };
+		2607AC542235C55400EE5DAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2607AC562235FFCD00EE5DAD /* NoteComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteComposer.swift; sourceTree = "<group>"; };
+		2607AC582236019F00EE5DAD /* ComposerTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerTextView.swift; sourceTree = "<group>"; };
+		2607AC5A2236353800EE5DAD /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		2619AF192235BEEB0052B89B /* KNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2619AF1C2235BEEB0052B89B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2619AF232235BEED0052B89B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +100,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2607AC4E2235C3B900EE5DAD /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2607AC4F2235C3C300EE5DAD /* NotesList.swift */,
+				2607AC562235FFCD00EE5DAD /* NoteComposer.swift */,
+				2607AC5A2236353800EE5DAD /* NoteModel.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2607AC512235C4A500EE5DAD /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2607AC522235C4B100EE5DAD /* DbConnector.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		2619AF102235BEEB0052B89B = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +139,8 @@
 		2619AF1B2235BEEB0052B89B /* KNotes */ = {
 			isa = PBXGroup;
 			children = (
+				2607AC512235C4A500EE5DAD /* Database */,
+				2607AC4E2235C3B900EE5DAD /* Features */,
 				2619AF672235C1840052B89B /* Libs */,
 				2619AF2F2235C10D0052B89B /* Config */,
 				2619AF2E2235C0FF0052B89B /* Resources */,
@@ -128,6 +160,7 @@
 		2619AF2F2235C10D0052B89B /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				2607AC542235C55400EE5DAD /* GoogleService-Info.plist */,
 				2619AF1C2235BEEB0052B89B /* AppDelegate.swift */,
 				2619AF282235BEED0052B89B /* Info.plist */,
 			);
@@ -171,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				2619AF662235C1640052B89B /* KNCodebase */,
+				2607AC582236019F00EE5DAD /* ComposerTextView.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -254,6 +288,7 @@
 			files = (
 				2619AF272235BEED0052B89B /* LaunchScreen.storyboard in Resources */,
 				2619AF242235BEED0052B89B /* Assets.xcassets in Resources */,
+				2607AC552235C55400EE5DAD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,14 +327,24 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KNotes/Pods-KNotes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LEOTextView/LEOTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LEOTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -324,20 +369,25 @@
 				2619AF692235C2380052B89B /* Controller+Keyboard.swift in Sources */,
 				2619AF5D2235C15A0052B89B /* DateExtension.swift in Sources */,
 				2619AF5C2235C15A0052B89B /* IntExtension.swift in Sources */,
+				2607AC502235C3C300EE5DAD /* NotesList.swift in Sources */,
 				2619AF552235C15A0052B89B /* ServiceConnector.swift in Sources */,
 				2619AF4D2235C15A0052B89B /* knController.swift in Sources */,
 				2619AF532235C15A0052B89B /* UIImageExtension.swift in Sources */,
 				2619AF512235C15A0052B89B /* UIButtonExtension.swift in Sources */,
 				2619AF602235C15A0052B89B /* General.swift in Sources */,
+				2607AC5B2236353800EE5DAD /* NoteModel.swift in Sources */,
 				2619AF5F2235C15A0052B89B /* UIApplicationExtension.swift in Sources */,
 				2619AF5A2235C15A0052B89B /* UITextFieldExtension.swift in Sources */,
 				2619AF5B2235C15A0052B89B /* knView.swift in Sources */,
 				2619AF592235C15A0052B89B /* DeviceType.swift in Sources */,
+				2607AC592236019F00EE5DAD /* ComposerTextView.swift in Sources */,
 				2619AF582235C15A0052B89B /* NavigationExtension.swift in Sources */,
 				2619AF562235C15A0052B89B /* UIViewControllerExtension.swift in Sources */,
+				2607AC572235FFCD00EE5DAD /* NoteComposer.swift in Sources */,
 				2619AF632235C15A0052B89B /* UIViewExtension.swift in Sources */,
 				2619AF622235C15A0052B89B /* StringExtension.swift in Sources */,
 				2619AF4E2235C15A0052B89B /* knConstraints.swift in Sources */,
+				2607AC532235C4B100EE5DAD /* DbConnector.swift in Sources */,
 				2619AF652235C15A0052B89B /* KMPlaceholderTextView.swift in Sources */,
 				2619AF542235C15A0052B89B /* knListView.swift in Sources */,
 			);
@@ -485,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kynguyen.KNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = kn.knotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -504,7 +554,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kynguyen.KNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = kn.knotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
