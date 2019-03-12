@@ -24,7 +24,7 @@ class KNoteItem: knListCell<KNote> {
     let titleLabel = UIMaker.makeLabel(font: UIFont.boldSystemFont(ofSize: 15),
                                        color: .black)
     let timeLabel = UIMaker.makeLabel(font: UIFont.systemFont(ofSize: 13),
-                                           color: .lightGray)
+                                           color: .gray)
     let firstLineLabel = UIMaker.makeLabel(font: UIFont.systemFont(ofSize: 13),
                                        color: .lightGray)
 
@@ -32,11 +32,12 @@ class KNoteItem: knListCell<KNote> {
         addSubviews(views: titleLabel, timeLabel, firstLineLabel)
 
         titleLabel.horizontal(toView: self, space: padding)
-        titleLabel.bottom(toAnchor: centerYAnchor, space: -2)
+        titleLabel.bottom(toAnchor: centerYAnchor, space: -4)
 
         timeLabel.left(toView: titleLabel)
-        timeLabel.horizontalSpacing(toView: firstLineLabel, space: padding)
-        timeLabel.verticalSpacing(toView: titleLabel, space: 4)
+        timeLabel.horizontalSpacing(toView: firstLineLabel, space: 8)
+        timeLabel.setContentHuggingPriority(.init(900), for: .horizontal)
+        timeLabel.verticalSpacing(toView: titleLabel, space: 8)
 
         firstLineLabel.right(toView: self, space: -padding)
         firstLineLabel.centerY(toView: timeLabel)
@@ -45,15 +46,23 @@ class KNoteItem: knListCell<KNote> {
 }
 
 class KNotesListController: knListController<KNoteItem, KNote> {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchData()
     }
 
     override func setupView() {
+        title = "KNotes"
+        rowHeight = 64
         super.setupView()
         view.addFill(tableView)
+
+        let createButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNote))
+        navigationItem.rightBarButtonItem = createButton
+    }
+
+    @objc func createNote() {
+        push(KNoteComposerController())
     }
 
     override func fetchData() {
@@ -62,6 +71,12 @@ class KNotesListController: knListController<KNoteItem, KNote> {
 
     func didGetNotes(_ data: [KNote]) {
         datasource = data
+    }
+
+    override func didSelectRow(at indexPath: IndexPath) {
+        let controller = KNoteEditorController()
+        controller.data = datasource[indexPath.row]
+        push(controller)
     }
 }
 

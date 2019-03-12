@@ -10,22 +10,28 @@ import Foundation
 
 class KNote {
     var id: String
-    var rawText: String?
+    var rawText: String? { didSet {
+        title = getTitle()
+        firstLine = getFirstLine()
+    }}
+    var jsonText: String?
     var title: String?
     var firstLine: String?
     var timestamp: Double = 0
 
-    init(rawText: String? = nil) {
+    init(rawText: String? = nil, jsonText: String? = nil) {
         id = UUID.init().uuidString
         self.rawText = rawText
-        self.title = getTitle()
-        self.firstLine = getFirstLine()
+        self.jsonText = jsonText
+        title = getTitle()
+        firstLine = getFirstLine()
         timestamp = Date().timeIntervalSince1970
     }
 
     init(rawData: AnyObject) {
         id = rawData["id"] as? String ?? ""
         rawText = rawData["rawText"] as? String
+        jsonText = rawData["jsonText"] as? String
         title = rawData["title"] as? String
         firstLine = rawData["firstLine"] as? String
         timestamp = rawData["timestamp"] as? Double ?? 0
@@ -37,6 +43,14 @@ class KNote {
 
         if let data = title {
             dict["title"] = data
+        }
+
+        if let data = rawText {
+            dict["rawText"] = data
+        }
+
+        if let data = jsonText {
+            dict["jsonText"] = data
         }
 
         if let data = firstLine {

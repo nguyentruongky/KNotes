@@ -11,5 +11,7 @@ target 'KNotes' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'LEOTextView'
+  pod 'SubviewAttachingTextView'
+
 
 end

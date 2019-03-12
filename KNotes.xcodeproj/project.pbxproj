@@ -14,6 +14,7 @@
 		2607AC572235FFCD00EE5DAD /* NoteComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607AC562235FFCD00EE5DAD /* NoteComposer.swift */; };
 		2607AC592236019F00EE5DAD /* ComposerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607AC582236019F00EE5DAD /* ComposerTextView.swift */; };
 		2607AC5B2236353800EE5DAD /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607AC5A2236353800EE5DAD /* NoteModel.swift */; };
+		2614A63622373DA4002E6298 /* UpdateNoteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2614A63522373DA4002E6298 /* UpdateNoteWorker.swift */; };
 		2619AF1D2235BEEB0052B89B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619AF1C2235BEEB0052B89B /* AppDelegate.swift */; };
 		2619AF242235BEED0052B89B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2619AF232235BEED0052B89B /* Assets.xcassets */; };
 		2619AF272235BEED0052B89B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2619AF252235BEED0052B89B /* LaunchScreen.storyboard */; };
@@ -43,6 +44,7 @@
 		2619AF642235C15A0052B89B /* 1.Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619AF4A2235C15A0052B89B /* 1.Setting.swift */; };
 		2619AF652235C15A0052B89B /* KMPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619AF4B2235C15A0052B89B /* KMPlaceholderTextView.swift */; };
 		2619AF692235C2380052B89B /* Controller+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619AF682235C2380052B89B /* Controller+Keyboard.swift */; };
+		26BDC0832236F12A00028543 /* NoteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDC0822236F12A00028543 /* NoteEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,7 @@
 		2607AC562235FFCD00EE5DAD /* NoteComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteComposer.swift; sourceTree = "<group>"; };
 		2607AC582236019F00EE5DAD /* ComposerTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerTextView.swift; sourceTree = "<group>"; };
 		2607AC5A2236353800EE5DAD /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		2614A63522373DA4002E6298 /* UpdateNoteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteWorker.swift; sourceTree = "<group>"; };
 		2619AF192235BEEB0052B89B /* KNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2619AF1C2235BEEB0052B89B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2619AF232235BEED0052B89B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		2619AF4A2235C15A0052B89B /* 1.Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1.Setting.swift; sourceTree = "<group>"; };
 		2619AF4B2235C15A0052B89B /* KMPlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPlaceholderTextView.swift; sourceTree = "<group>"; };
 		2619AF682235C2380052B89B /* Controller+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Controller+Keyboard.swift"; sourceTree = "<group>"; };
+		26BDC0822236F12A00028543 /* NoteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditor.swift; sourceTree = "<group>"; };
 		30532D68FF5885D58F15CAF3 /* Pods-KNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KNotes.debug.xcconfig"; path = "Target Support Files/Pods-KNotes/Pods-KNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		6FEACCDFF7F40413AB521D36 /* Pods-KNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KNotes.release.xcconfig"; path = "Target Support Files/Pods-KNotes/Pods-KNotes.release.xcconfig"; sourceTree = "<group>"; };
 		92F1055C9E1B66B416D0963A /* Pods_KNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,8 @@
 				2607AC4F2235C3C300EE5DAD /* NotesList.swift */,
 				2607AC562235FFCD00EE5DAD /* NoteComposer.swift */,
 				2607AC5A2236353800EE5DAD /* NoteModel.swift */,
+				26BDC0822236F12A00028543 /* NoteEditor.swift */,
+				2614A63522373DA4002E6298 /* UpdateNoteWorker.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LEOTextView/LEOTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/SubviewAttachingTextView/SubviewAttachingTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -343,6 +350,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LEOTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SubviewAttachingTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -358,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2614A63622373DA4002E6298 /* UpdateNoteWorker.swift in Sources */,
 				2619AF572235C15A0052B89B /* UISearchBarExtension.swift in Sources */,
 				2619AF5E2235C15A0052B89B /* knUIMaker.swift in Sources */,
 				2619AF612235C15A0052B89B /* knGridView.swift in Sources */,
@@ -389,6 +398,7 @@
 				2619AF4E2235C15A0052B89B /* knConstraints.swift in Sources */,
 				2607AC532235C4B100EE5DAD /* DbConnector.swift in Sources */,
 				2619AF652235C15A0052B89B /* KMPlaceholderTextView.swift in Sources */,
+				26BDC0832236F12A00028543 /* NoteEditor.swift in Sources */,
 				2619AF542235C15A0052B89B /* knListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

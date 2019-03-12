@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SubviewAttachingTextView
 
 class KNoteComposerController: knController {
     let composerTextView = ComposerTextView()
@@ -19,7 +20,8 @@ class KNoteComposerController: knController {
     override func setupView() {
         title = "New Note"
         view.backgroundColor = .white
-        composerTextView.backgroundColor = .green
+        composerTextView.backgroundColor = .white
+
         view.addSubview(composerTextView)
         composerTextView.setupInternalLayout()
         composerTextView.horizontal(toView: view)
@@ -36,18 +38,15 @@ class KNoteComposerController: knController {
 
     @objc func saveNote() {
         guard let text = composerTextView.text else { return }
-        let note = KNote(rawText: text)
+        let jsonText = composerTextView.textAttributesJSON()
+        let note = KNote(rawText: text, jsonText: jsonText)
         KDBConnector().saveNote(note)
+        pop()
     }
 
     @objc func hideKeyboard() {
         composerTextView.deactivateTextView()
     }
-
-    override func fetchData() {
-
-    }
-
 }
 
 

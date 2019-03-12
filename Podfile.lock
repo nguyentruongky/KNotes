@@ -76,6 +76,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SubviewAttachingTextView (1.3.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -85,6 +86,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - Kingfisher
   - LEOTextView
+  - SubviewAttachingTextView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -104,6 +106,7 @@ SPEC REPOS:
     - LEOTextView
     - leveldb-library
     - nanopb
+    - SubviewAttachingTextView
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -122,7 +125,8 @@ SPEC CHECKSUMS:
   LEOTextView: 9a501625666bff62e6adf9cbd6087763f07043ac
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SubviewAttachingTextView: 27a6ae7bde3b891b15d85ea2aee4b6d635b34a32
 
-PODFILE CHECKSUM: d280272f22f54ffce96c3985f03080458b63ace4
+PODFILE CHECKSUM: e21ae70d97225db0493e2f2226248c6ffd147810
 
 COCOAPODS: 1.6.1

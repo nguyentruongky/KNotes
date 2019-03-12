@@ -26,8 +26,14 @@ struct KDBConnector {
             .observeSingleEvent(of: .value) { (snapshot) in
                 guard let rawNotes = snapshot.value as? [String: AnyObject] else { return }
                 let rawData = Array(rawNotes.values)
-                let data = rawData.map({ return KNote(rawData: $0) })
+                var data = rawData.map({ return KNote(rawData: $0) })
+                data.sort(by: { return $0.timestamp > $1.timestamp })
                 success?(data)
         }
+    }
+
+    func getNoteBucket() -> DatabaseReference {
+        return Database.database().reference()
+            .child(KBucket.notes.rawValue)
     }
 }
