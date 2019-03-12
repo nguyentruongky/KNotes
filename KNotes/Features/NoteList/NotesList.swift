@@ -9,6 +9,8 @@
 import UIKit
 
 final class KNotesListController: knListController<KNoteItem, KNote> {
+    let stateView = knStateView()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
@@ -36,6 +38,11 @@ final class KNotesListController: knListController<KNoteItem, KNote> {
 
     func didGetNotes(_ data: [KNote]) {
         datasource = data
+        if data.isEmpty {
+            stateView.show(state: .empty, in: view)
+        } else {
+            stateView.state = .success
+        }
     }
 
     override func didSelectRow(at indexPath: IndexPath) {

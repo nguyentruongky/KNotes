@@ -54,7 +54,7 @@ class KCheckItemCell: knListCell<KCheckItem>, UITextFieldDelegate {
         setCheckBox(isChecked)
     }
 
-    private func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         data?.title = titleTextField.text
         delegate?.addNewItem()
         return true

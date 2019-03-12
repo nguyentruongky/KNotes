@@ -16,7 +16,10 @@ struct KGetNotesWorker {
     func execute() {
         let db = KDBConnector().getNoteBucket()
         db.observeSingleEvent(of: .value) { (snapshot) in
-            guard let rawNotes = snapshot.value as? [String: AnyObject] else { return }
+            guard let rawNotes = snapshot.value as? [String: AnyObject] else {
+                self.success?([])
+                return
+            }
 
             let rawData = Array(rawNotes.values)
             var data = rawData.map({ return KNote(rawData: $0) })

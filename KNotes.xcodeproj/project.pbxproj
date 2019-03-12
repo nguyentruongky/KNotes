@@ -62,6 +62,7 @@
 		2619AF642235C15A0052B89B /* 1.Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619AF4A2235C15A0052B89B /* 1.Setting.swift */; };
 		2619AF652235C15A0052B89B /* KMPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619AF4B2235C15A0052B89B /* KMPlaceholderTextView.swift */; };
 		2619AF692235C2380052B89B /* Controller+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619AF682235C2380052B89B /* Controller+Keyboard.swift */; };
+		26A8100022379DC900AC6D4A /* knStateview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A80FFF22379DC900AC6D4A /* knStateview.swift */; };
 		26BDC0832236F12A00028543 /* NoteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDC0822236F12A00028543 /* NoteEditor.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,17 +77,17 @@
 		2614A63722375017002E6298 /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		2614A63922375C9A002E6298 /* CheckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckList.swift; sourceTree = "<group>"; };
 		2614A6472237898F002E6298 /* NoteItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemCell.swift; sourceTree = "<group>"; };
-		2614A64A223789C9002E6298 /* LEOFormatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LEOFormatTableViewController.swift; path = LEOFormatTableViewController.swift; sourceTree = "<group>"; };
-		2614A64B223789C9002E6298 /* LEOTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LEOTextStorage.swift; path = LEOTextStorage.swift; sourceTree = "<group>"; };
-		2614A64C223789C9002E6298 /* LEOTextUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LEOTextUtil.swift; path = LEOTextUtil.swift; sourceTree = "<group>"; };
-		2614A64D223789C9002E6298 /* LEOTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LEOTextView.swift; path = LEOTextView.swift; sourceTree = "<group>"; };
-		2614A64E223789C9002E6298 /* LEOTextView+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LEOTextView+Toolbar.swift"; path = "LEOTextView+Toolbar.swift"; sourceTree = "<group>"; };
-		2614A64F223789C9002E6298 /* LEOTextView+UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LEOTextView+UITextViewDelegate.swift"; path = "LEOTextView+UITextViewDelegate.swift"; sourceTree = "<group>"; };
-		2614A650223789C9002E6298 /* LEOTextViewStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LEOTextViewStructs.swift; path = LEOTextViewStructs.swift; sourceTree = "<group>"; };
-		2614A651223789C9002E6298 /* NSAttributedString+SafeReplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+SafeReplace.swift"; path = "NSAttributedString+SafeReplace.swift"; sourceTree = "<group>"; };
-		2614A652223789C9002E6298 /* String+Length.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Length.swift"; path = "String+Length.swift"; sourceTree = "<group>"; };
-		2614A653223789C9002E6298 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Images.xcassets; sourceTree = "<group>"; };
-		2614A654223789C9002E6298 /* LEOTextView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LEOTextView.storyboard; path = LEOTextView.storyboard; sourceTree = "<group>"; };
+		2614A64A223789C9002E6298 /* LEOFormatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOFormatTableViewController.swift; sourceTree = "<group>"; };
+		2614A64B223789C9002E6298 /* LEOTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOTextStorage.swift; sourceTree = "<group>"; };
+		2614A64C223789C9002E6298 /* LEOTextUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOTextUtil.swift; sourceTree = "<group>"; };
+		2614A64D223789C9002E6298 /* LEOTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOTextView.swift; sourceTree = "<group>"; };
+		2614A64E223789C9002E6298 /* LEOTextView+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LEOTextView+Toolbar.swift"; sourceTree = "<group>"; };
+		2614A64F223789C9002E6298 /* LEOTextView+UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LEOTextView+UITextViewDelegate.swift"; sourceTree = "<group>"; };
+		2614A650223789C9002E6298 /* LEOTextViewStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOTextViewStructs.swift; sourceTree = "<group>"; };
+		2614A651223789C9002E6298 /* NSAttributedString+SafeReplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+SafeReplace.swift"; sourceTree = "<group>"; };
+		2614A652223789C9002E6298 /* String+Length.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Length.swift"; sourceTree = "<group>"; };
+		2614A653223789C9002E6298 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2614A654223789C9002E6298 /* LEOTextView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LEOTextView.storyboard; sourceTree = "<group>"; };
 		2614A66C22378D33002E6298 /* GetNotesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNotesWorker.swift; sourceTree = "<group>"; };
 		2614A66E22378E23002E6298 /* CreateNoteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteWorker.swift; sourceTree = "<group>"; };
 		2614A67022379230002E6298 /* Composer+Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Composer+Checklist.swift"; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		2619AF4A2235C15A0052B89B /* 1.Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1.Setting.swift; sourceTree = "<group>"; };
 		2619AF4B2235C15A0052B89B /* KMPlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPlaceholderTextView.swift; sourceTree = "<group>"; };
 		2619AF682235C2380052B89B /* Controller+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Controller+Keyboard.swift"; sourceTree = "<group>"; };
+		26A80FFF22379DC900AC6D4A /* knStateview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knStateview.swift; sourceTree = "<group>"; };
 		26BDC0822236F12A00028543 /* NoteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditor.swift; sourceTree = "<group>"; };
 		30532D68FF5885D58F15CAF3 /* Pods-KNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KNotes.debug.xcconfig"; path = "Target Support Files/Pods-KNotes/Pods-KNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		6FEACCDFF7F40413AB521D36 /* Pods-KNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KNotes.release.xcconfig"; path = "Target Support Files/Pods-KNotes/Pods-KNotes.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,7 +177,6 @@
 				2614A653223789C9002E6298 /* Images.xcassets */,
 				2614A654223789C9002E6298 /* LEOTextView.storyboard */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -276,6 +277,7 @@
 		2619AF662235C1640052B89B /* KNCodebase */ = {
 			isa = PBXGroup;
 			children = (
+				26A80FFF22379DC900AC6D4A /* knStateview.swift */,
 				2619AF4A2235C15A0052B89B /* 1.Setting.swift */,
 				2619AF682235C2380052B89B /* Controller+Keyboard.swift */,
 				2619AF432235C1590052B89B /* DateExtension.swift */,
@@ -470,6 +472,7 @@
 				2614A67622379474002E6298 /* CheckItemCell.swift in Sources */,
 				2614A63622373DA4002E6298 /* UpdateNoteWorker.swift in Sources */,
 				2619AF572235C15A0052B89B /* UISearchBarExtension.swift in Sources */,
+				26A8100022379DC900AC6D4A /* knStateview.swift in Sources */,
 				2619AF5E2235C15A0052B89B /* knUIMaker.swift in Sources */,
 				2619AF612235C15A0052B89B /* knGridView.swift in Sources */,
 				2619AF1D2235BEEB0052B89B /* AppDelegate.swift in Sources */,
