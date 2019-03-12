@@ -13,6 +13,7 @@ enum KBucket: String {
 }
 
 struct KDBConnector {
+    // dependency injection: do not depend on Firebase or something
     func getNoteBucket() -> DatabaseReference {
         return Database.database().reference()
             .child(KBucket.notes.rawValue)

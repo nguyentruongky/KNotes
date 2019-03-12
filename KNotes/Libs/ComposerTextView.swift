@@ -8,6 +8,7 @@
 
 import UIKit
 
+// dependency injection: prevent dependency on the specific library
 final class ComposerTextView: LEOTextView, KComposerTextViewCheckListDelegate {
     var checkListView: KChecklistView?
     var checkAttachment: SubviewTextAttachment?
