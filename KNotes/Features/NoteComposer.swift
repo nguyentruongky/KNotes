@@ -14,6 +14,7 @@ class KNoteComposerController: knController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupKeyboardNotifcationListenerForScrollView(scrollView: composerTextView)
         setupView()
     }
 
@@ -23,7 +24,6 @@ class KNoteComposerController: knController {
         composerTextView.backgroundColor = .white
 
         view.addSubview(composerTextView)
-        composerTextView.setupInternalLayout()
         composerTextView.horizontal(toView: view)
         composerTextView.top(toAnchor: view.safeAreaLayoutGuide.topAnchor)
         composerTextView.bottom(toAnchor: view.safeAreaLayoutGuide.bottomAnchor)
@@ -32,8 +32,6 @@ class KNoteComposerController: knController {
         navigationItem.rightBarButtonItem = saveButton
 
         composerTextView.activateTextView()
-        composerTextView.inputAccessoryView = UIMaker.makeKeyboardDoneView(target: self, doneAction: #selector(hideKeyboard))
-        setupKeyboardNotifcationListenerForScrollView(scrollView: composerTextView)
     }
 
     @objc func saveNote() {

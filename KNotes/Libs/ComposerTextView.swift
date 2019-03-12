@@ -9,8 +9,10 @@
 import UIKit
 import LEOTextView
 
-class ComposerTextView: LEOTextView {
+class ComposerTextView: LEOTextView, KComposerTextViewCheckListDelegate {
     private let button = UIMaker.makeButton()
+    private var checkListView: KChecklistView?
+
     var isActive = false {
         didSet {
             if isActive {
@@ -22,6 +24,8 @@ class ComposerTextView: LEOTextView {
             }
         }
     }
+
+    
 
     override init(normalFont: UIFont, titleFont: UIFont, boldFont: UIFont, italicFont: UIFont) {
         super.init(normalFont: normalFont, titleFont: titleFont, boldFont: boldFont, italicFont: italicFont)
@@ -42,6 +46,14 @@ class ComposerTextView: LEOTextView {
         setupView()
     }
 
+    private let attachmentBehavior = SubviewAttachingTextViewBehavior()
+    open override var textContainerInset: UIEdgeInsets {
+        didSet {
+            // Text container insets are used to convert coordinates between the text container and text view, so a change to these insets must trigger a layout update
+            self.attachmentBehavior.layoutAttachedSubviews()
+        }
+    }
+
     private func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor.black.alpha(0.5)
@@ -49,11 +61,14 @@ class ComposerTextView: LEOTextView {
         button.isHidden = true
         isEditable = true
         dataDetectorTypes = .all
+
+        self.attachmentBehavior.textView = self
+        self.layoutManager.delegate = self.attachmentBehavior
+        self.textStorage.delegate = self.attachmentBehavior
+
+        inputAccessoryView = makeToolbar()
     }
 
-    func setupInternalLayout() {
-//        superview?.addFill(button)
-    }
 
     @discardableResult
     override func becomeFirstResponder() -> Bool {
@@ -68,7 +83,7 @@ class ComposerTextView: LEOTextView {
         becomeFirstResponder()
     }
 
-    func deactivateTextView() {
+    @objc func deactivateTextView() {
         resignFirstResponder()
         isActive = false
     }
@@ -76,4 +91,64 @@ class ComposerTextView: LEOTextView {
     @objc private func onActivateTextView() {
         activateTextView()
     }
+
+    var checkAttachment: SubviewTextAttachment?
+    @objc func addCheckList() {
+        checkListView = KChecklistView(frame: CGRect(x: 0, y: 0,
+                                                 width: screenWidth,
+                                                 height: KChecklistView.listHeight))
+        checkListView?.delegate = self
+
+        checkListView?.backgroundColor = .green
+        let leftPara = NSMutableParagraphStyle()
+        leftPara.alignment = .left
+        leftPara.paragraphSpacing = 10
+        leftPara.paragraphSpacingBefore = 10
+
+        checkAttachment = SubviewTextAttachment(view: checkListView!,
+                                                    size: CGSize(width: screenWidth,
+                                                                 height: KChecklistView.listHeight))
+        attributedText = attributedText
+            .insertingAttachment(checkAttachment!, at: text.count, with: leftPara)
+
+        checkListView?.datasource = [KCheckItem(title: "")]
+        checkListView?.setFocus(onIndex: 0)
+    }
+
+    func updateCheckListHeight(_ height: CGFloat) {
+        checkListView?.frame.size.height = height
+        checkAttachment = SubviewTextAttachment(view: checkListView!,
+                                                size: CGSize(width: screenWidth,
+                                                             height: height))
+        setNeedsLayout()
+        layoutIfNeeded()
+    }
+
+    func makeToolbar() -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 35))
+        let font = UIFont.systemFont(ofSize: 15)
+        let addChecklistButton = UIMaker.makeButton(title: "Add checklist",
+                                            titleColor: UIColor(value: 3),
+                                            font: font)
+        addChecklistButton.addTarget(self, action: #selector(addCheckList), for: .touchUpInside)
+        view.addSubview(addChecklistButton)
+        addChecklistButton.left(toView: view, space: 30)
+        addChecklistButton.centerY(toView: view)
+
+
+        let doneButton = UIMaker.makeButton(title: "Done",
+                                titleColor: UIColor(value: 3),
+                                font: font)
+        doneButton.addTarget(self, action: #selector(deactivateTextView), for: .touchUpInside)
+        view.addSubview(doneButton)
+        doneButton.right(toView: view, space: -30)
+        doneButton.centerY(toView: view)
+
+        view.backgroundColor = UIColor(value: 235)
+        return view
+    }
+}
+
+protocol KComposerTextViewCheckListDelegate: class {
+    func updateCheckListHeight(_ height: CGFloat)
 }

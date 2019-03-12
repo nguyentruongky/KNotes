@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTViewAttachment
 
 class KNoteEditorController: KNoteComposerController {
     var data: KNote? { didSet {
@@ -20,6 +21,7 @@ class KNoteEditorController: KNoteComposerController {
     override func setupView() {
         super.setupView()
         title = data?.title
+        composerTextView.deactivateTextView()
     }
 
     override func saveNote() {

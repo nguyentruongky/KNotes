@@ -134,6 +134,7 @@ class UIMaker {
         let button = makeButton(title: title,
                                 titleColor: UIColor(value: 3),
                                 font: font)
+        
         if let doneAction = doneAction {
             button.addTarget(target, action: doneAction, for: .touchUpInside)
         }
