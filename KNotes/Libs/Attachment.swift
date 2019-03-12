@@ -1,9 +1,9 @@
 //
-//  Attachment.swift
-//  KNotes
+//  TextAttachedViewProvider.swift
+//  SubviewAttachingTextView
 //
-//  Created by Ky Nguyen on 3/12/19.
-//  Copyright © 2019 Ky Nguyen. All rights reserved.
+//  Created by Vlas Voloshin on 25/3/17.
+//  Copyright © 2017 Vlas Voloshin. All rights reserved.
 //
 
 import UIKit
@@ -70,18 +70,7 @@ public extension NSMutableAttributedString {
 public extension String {
 
     static let paragraphSeparator = "\u{2029}"
-
 }
-
-//
-//  SubviewTextAttachment.swift
-//  SubviewAttachingTextView
-//
-//  Created by Vlas Voloshin on 29/1/17.
-//  Copyright © 2017 Vlas Voloshin. All rights reserved.
-//
-
-import UIKit
 
 /**
  Describes a custom text attachment object containing a view. SubviewAttachingTextViewBehavior tracks attachments of this class and automatically manages adding and removing subviews in its text view.
@@ -172,15 +161,6 @@ private extension UIView {
 
 }
 
-//
-//  TextAttachedViewProvider.swift
-//  SubviewAttachingTextView
-//
-//  Created by Vlas Voloshin on 25/3/17.
-//  Copyright © 2017 Vlas Voloshin. All rights reserved.
-//
-
-import UIKit
 
 /**
  Describes a protocol that provides views inserted as subviews into text views that render a `SubviewTextAttachment`, and customizes their layout.

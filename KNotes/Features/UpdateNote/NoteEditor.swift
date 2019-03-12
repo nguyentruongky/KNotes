@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import RTViewAttachment
 
-class KNoteEditorController: KNoteComposerController {
+final class KNoteEditorController: KNoteComposerController {
     var data: KNote? { didSet {
         if let json = data?.jsonText {
             composerTextView.setAttributeTextWithJSONString(json)

@@ -69,15 +69,12 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - Kingfisher (5.2.0)
-  - LEOTextView (0.7.1)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - RTViewAttachment (0.1.1)
-  - SubviewAttachingTextView (1.3.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -86,9 +83,6 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - Kingfisher
-  - LEOTextView
-  - RTViewAttachment
-  - SubviewAttachingTextView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -105,11 +99,8 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - Kingfisher
-    - LEOTextView
     - leveldb-library
     - nanopb
-    - RTViewAttachment
-    - SubviewAttachingTextView
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -125,12 +116,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
-  LEOTextView: 9a501625666bff62e6adf9cbd6087763f07043ac
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  RTViewAttachment: d5000343777e60cc77202f7279873134e3233d89
-  SubviewAttachingTextView: 27a6ae7bde3b891b15d85ea2aee4b6d635b34a32
 
-PODFILE CHECKSUM: ca546f07c58ee5a8746d4e6032646243e08b598d
+PODFILE CHECKSUM: 754fe20ab8fc16708f098d48862d1ca25c827f23
 
 COCOAPODS: 1.6.1

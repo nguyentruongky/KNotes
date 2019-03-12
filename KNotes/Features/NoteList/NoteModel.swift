@@ -8,12 +8,13 @@
 
 import Foundation
 
-class KNote {
+final class KNote {
     var id: String
     var rawText: String? { didSet {
         title = getTitle()
         firstLine = getFirstLine()
     }}
+
     var jsonText: String?
     var title: String?
     var firstLine: String?
@@ -67,7 +68,8 @@ class KNote {
     }
 
     private func getSentences() -> [String] {
-        let sentences = rawText?.splitString(".") ?? []
+        let newText = rawText?.replace("\n", with: ".")
+        let sentences = newText?.splitString(".") ?? []
         return sentences
     }
 

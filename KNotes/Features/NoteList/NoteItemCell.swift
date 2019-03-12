@@ -1,14 +1,14 @@
 //
-//  NotesList.swift
+//  NoteItemCell.swift
 //  KNotes
 //
-//  Created by Ky Nguyen on 3/11/19.
+//  Created by Ky Nguyen on 3/12/19.
 //  Copyright © 2019 Ky Nguyen. All rights reserved.
 //
 
 import UIKit
 
-class KNoteItem: knListCell<KNote> {
+final class KNoteItem: knListCell<KNote> {
     override var data: KNote? {
         didSet {
             titleLabel.text = data?.title
@@ -24,9 +24,9 @@ class KNoteItem: knListCell<KNote> {
     let titleLabel = UIMaker.makeLabel(font: UIFont.boldSystemFont(ofSize: 15),
                                        color: .black)
     let timeLabel = UIMaker.makeLabel(font: UIFont.systemFont(ofSize: 13),
-                                           color: .gray)
+                                      color: .gray)
     let firstLineLabel = UIMaker.makeLabel(font: UIFont.systemFont(ofSize: 13),
-                                       color: .lightGray)
+                                           color: .lightGray)
 
     override func setupView() {
         addSubviews(views: titleLabel, timeLabel, firstLineLabel)
@@ -42,42 +42,4 @@ class KNoteItem: knListCell<KNote> {
         firstLineLabel.right(toView: self, space: -padding)
         firstLineLabel.centerY(toView: timeLabel)
     }
-    
 }
-
-class KNotesListController: knListController<KNoteItem, KNote> {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchData()
-    }
-
-    override func setupView() {
-        title = "KNotes"
-        rowHeight = 64
-        super.setupView()
-        view.addFill(tableView)
-
-        let createButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNote))
-        navigationItem.rightBarButtonItem = createButton
-    }
-
-    @objc func createNote() {
-        push(KNoteComposerController())
-    }
-
-    override func fetchData() {
-        KDBConnector().getNotes(success: didGetNotes)
-    }
-
-    func didGetNotes(_ data: [KNote]) {
-        datasource = data
-    }
-
-    override func didSelectRow(at indexPath: IndexPath) {
-        let controller = KNoteEditorController()
-        controller.data = datasource[indexPath.row]
-        push(controller)
-    }
-}
-
-

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SubviewAttachingTextView
 
 class KNoteComposerController: knController {
     let composerTextView = ComposerTextView()
@@ -22,29 +21,23 @@ class KNoteComposerController: knController {
         title = "New Note"
         view.backgroundColor = .white
         composerTextView.backgroundColor = .white
+        composerTextView.activateTextView()
 
         view.addSubview(composerTextView)
         composerTextView.horizontal(toView: view)
         composerTextView.top(toAnchor: view.safeAreaLayoutGuide.topAnchor)
         composerTextView.bottom(toAnchor: view.safeAreaLayoutGuide.bottomAnchor)
 
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveNote))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save,
+                                         target: self, action: #selector(saveNote))
         navigationItem.rightBarButtonItem = saveButton
-
-        composerTextView.activateTextView()
     }
 
     @objc func saveNote() {
         guard let text = composerTextView.text else { return }
         let jsonText = composerTextView.textAttributesJSON()
         let note = KNote(rawText: text, jsonText: jsonText)
-        KDBConnector().saveNote(note)
+        KCreateNoteWorker(note: note).execute()
         pop()
     }
-
-    @objc func hideKeyboard() {
-        composerTextView.deactivateTextView()
-    }
 }
-
-
